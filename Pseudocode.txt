@@ -1,0 +1,122 @@
+
+struct stateTrans
+	simulate machine using char state
+	simulate machine using char readChar
+	simulate machine using char nextState
+	simulate machine using char writeChar
+	simulate machine using char move
+
+int main() 
+	
+	initialize constant int MAXTAPE as 100								
+	initialize constant int MAXSTATES as 25								
+	initialize constant short STARTPOS as 40								
+	initialize constant char STARTSTATE to '0'							
+	initialize string fileName									
+	initialize string wTape											
+	ifstream input										
+	create array instructions
+	initialize char maxState as '0'to keep track of last state 			
+	input instructions from tape 		
+	to keep track of last state initialize maxState as '0' 													
+	initialize char tape[MAXTAPE] to represent tape 										
+	initialize slot with 0 value												
+	save length of tape 											
+	
+
+	for loop sets int i to less than 0 and runs if i is less than MAXTAPE  increments i
+		initialize place in tape[i] to be blank 
+
+
+	do
+		prompt for name of file containing tape
+		take in name of file  
+		open file
+		if file fails to open
+			displays error message  
+
+	while file doesn't open
+		prompt for new file name 
+
+
+	input tape into machine 
+
+
+	for loop int i is equal to 0 and runs as long as i is less than length of the tape  and increments i with each run
+		adds one to start position to move position 
+	save tape length
+	
+	while there is an input from the tape
+	  
+		input values for functions input, state, readChar, nextState, writeChar, move 
+		saves the corresponding values for state
+		saves the corresponding values for readChar
+		saves the corresponding values for nextState
+		saves the corresponding values for writeChar
+		saves the corresponding values for move
+
+		if the new slot has a greater max state
+			Finds the max state 
+		moves to the next slot by incrementing
+
+	creates the header and outputs to output file
+ 	display first character and blank
+	display rest of the tape
+	display final character in the tape
+
+
+	for loop sets  i to 0 and runs as long as i is less than slot value then increments i
+	  
+		Outputs the instructions for the turing machine state procedure
+		Outputs the instructions for the turing machine readchar procedure
+		Outputs the instructions for the turing machine nextState procedure
+		Outputs the instructions for the turing machine writeChar procedure
+		Outputs the instructions for the turing machine move procedure
+	   
+
+	Calls the turing machine
+	outputs blank and new line
+	display the location of the output file to the user 
+
+void turingMachine(argument,argument,argument,argument,argument,argument,argument,ofstream &output)
+  
+
+	if current state equals the other state
+
+		if state is found write , moves to next state if not found
+		  
+			move state variable to the next state
+			write character to next state
+
+			if statement to test whether to move position right
+				move tape index right
+			else
+				move tape index left
+			set slot position to 0 
+			call turing machine again to start again
+		   
+		else
+		  
+			move to next slot
+			call turing machine to go through turing machine again
+		   
+	   
+	else if the current position is less than the last state
+	  
+		Output header in display file
+		output data in display file 
+		for loop where i is 40 and runs while i is less than 40 plus the tape length, increments i each run
+			if the tape index is equal to i
+				output tape to display file 
+			else
+				output tape to display file at specific position in state
+		   
+		outputs blank at the output file 
+		return 
+	   
+	else
+	  
+		move to next slot
+		calls turing machine again
+	   
+   
